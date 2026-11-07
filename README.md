@@ -31,9 +31,9 @@ node --check src/worker.js
 ## Deploy from GitHub with Cloudflare Builds
 
 1. Source repository: [`Sans762/Ai-agent-world-`](https://github.com/Sans762/Ai-agent-world-). Do not commit API keys or passwords.
-2. Cloudflare dashboard → **Workers & Pages** → **Create application** → **GitHub** → choose `Sans762/Ai-agent-world-`, production branch `main`, Worker name `namo-agent-world`, root `/`, deploy command `npx wrangler deploy`.
+2. Cloudflare dashboard → **Workers & Pages** → **Create application** → **GitHub** → choose `Sans762/Ai-agent-world-`, production branch `main`, Worker name `ai-agent-world`, root `/`, deploy command `npx wrangler deploy`.
 3. Create a **D1** database `namo-world-db`, add the D1 binding `DB` with its actual `database_id` to `wrangler.toml`, and apply `migrations/0001_tasks.sql` (or Wrangler remote migrations). Commit the binding change to GitHub so Cloudflare redeploys.
 4. In the Cloudflare Worker, configure the secret `OWNER_KEY` (strong password, at least 12 characters); optionally add `GEMINI_API_KEY`.
-5. Open the resulting `https://namo-agent-world.<your-account>.workers.dev` URL on **both** mobile and PC. The real URL is assigned by Cloudflare, not invented by this repository.
+5. Open the resulting `https://ai-agent-world.modadee444.workers.dev` (verify the live deployment in your Cloudflare dashboard) URL on **both** mobile and PC. The real URL is assigned by Cloudflare, not invented by this repository.
 
 See [full step-by-step instructions](docs/GITHUB-CLOUDFLARE-TH.md). There is no live hosted instance in this source repository, and the existing ChatGPT conversation is not automatically embedded in the site.
