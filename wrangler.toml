@@ -1,4 +1,4 @@
-name = "namo-agent-world"
+name = "ai-agent-world"
 main = "src/worker.js"
 compatibility_date = "2026-11-07"
 
