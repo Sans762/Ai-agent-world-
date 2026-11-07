@@ -1,0 +1,15 @@
+name = "namo-agent-world"
+main = "src/worker.js"
+compatibility_date = "2026-11-07"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+# Add a D1 binding automatically with:
+# npx wrangler d1 create namo-world-db --binding DB --update-config
+
+# After adding D1, set secrets:
+# npx wrangler secret put OWNER_KEY
+# npx wrangler secret put GEMINI_API_KEY
+# Optional: npx wrangler secret put GEMINI_MODEL

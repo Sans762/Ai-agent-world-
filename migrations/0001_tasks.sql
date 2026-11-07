@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS tasks (
+ id INTEGER PRIMARY KEY AUTOINCREMENT,
+ title TEXT NOT NULL,
+ description TEXT NOT NULL DEFAULT '',
+ role TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'new',
+ result TEXT NOT NULL DEFAULT '',
+ error TEXT NOT NULL DEFAULT '',
+ created_at INTEGER NOT NULL,
+ updated_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_namo_tasks_status ON tasks(status);

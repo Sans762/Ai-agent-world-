@@ -1,0 +1,15 @@
+# Keep credentials and generated local data out of GitHub.
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db
+coverage/
+*.sqlite
+*.sqlite3

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#182636">
+<title>Namo Agent World · Pixel Town</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/style.css">
+<script defer src="/app.js"></script>
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+ <div class="brand"><span class="brandmark">N</span><div><b>NAMO <em>AGENT WORLD</em></b><small>PIXEL TOWN · COMPANY SIMULATION</small></div></div>
+ <div class="metrics"><span title="พนักงาน AI">◉ <b id="agentStat">6</b> AGENTS</span><span title="งานที่ได้รับมอบหมาย">▤ <b id="taskStat">0</b> TASKS</span></div>
+ <button class="topSettings" id="aboutBtn" type="button" title="สถานะการเชื่อมต่อ">⚙ <span id="onlineStat">LOCAL</span></button>
+</header>
+<main id="main">
+ <div id="stage" aria-label="โลกพิกเซล Namo สามารถลาก ซูม และกดเลือกอาคารหรือตัวละครได้" tabindex="0">
+  <canvas id="world" width="1100" height="720" aria-label="Namo Pixel Town"></canvas>
+  <div class="cloudNotice" id="cloudNotice"><span class="liveDot"></span><span id="modeLabel">โหมดทดลองในเบราว์เซอร์</span></div>
+  <div id="sceneControls"><button class="pixelBtn" id="zoomIn" aria-label="ซูมเข้า">＋</button><button class="pixelBtn" id="zoomOut" aria-label="ซูมออก">－</button><button class="pixelBtn" id="fitMap" aria-label="ดูแผนที่ทั้งหมด">▣</button></div>
+  <canvas id="miniMap" width="175" height="117" aria-label="แผนที่ย่อ"></canvas>
+  <button class="worldBanner" id="worldBanner">☀ NAMO TOWN <span>แตะอาคารหรือพนักงานเพื่อดูรายละเอียด</span></button>
+ </div>
+ <section id="sidePanel" aria-label="จัดการบริษัท">
+   <div class="panelTop"><div><div class="eyebrow" id="paneEyebrow">TOWN HQ</div><h2 id="paneTitle">บริษัทของคุณ</h2></div><button class="iconBtn" id="closePanel" aria-label="ปิดหน้าต่าง">×</button></div>
+   <div id="panelBody"></div>
+ </section>
+ <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</main>
+<nav class="dock" aria-label="เมนู Namo">
+ <button class="dockButton active" data-tab="world"><span>▧</span><small>โลก</small></button>
+ <button class="dockButton" data-tab="agents"><span>♟</span><small>Agent</small></button>
+ <button class="dockButton" data-tab="tasks"><span>▤</span><small>งาน</small></button>
+ <button class="dockButton" data-tab="ai"><span>✦</span><small>AI</small></button>
+ <button class="dockButton" data-tab="settings"><span>⚙</span><small>ตั้งค่า</small></button>
+</nav>
+</div>
+</body>
+</html>
